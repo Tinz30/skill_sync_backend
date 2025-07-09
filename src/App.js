@@ -6,6 +6,8 @@ const { swaggerUi, swaggerSpec } = require('../swagger/swaggerConfig')
 
 const app = express();
 app.use(express.json());
+const cors = require('cors');
+app.use(cors()); 
 app.get('/health', (req, res) => res.send('API is running'));
 app.get('/skills', (req, res) => { res.json([{ id: 1, name: 'React' }, { id: 2, name: 'Node' }]) })
 
